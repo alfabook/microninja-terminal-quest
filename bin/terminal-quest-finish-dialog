@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+# Copyright (C) 2016 Alfabook srl
+# License: http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2
+
+from linux_story.gtk3.FinishDialog import FinishDialog
+
+kdialog = FinishDialog()
+response = kdialog.run()
+

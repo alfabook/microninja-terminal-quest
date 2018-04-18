@@ -1,0 +1,37 @@
+  _       _____
+ | |     / ____|
+ | |    | (___
+ | |     \___ \
+ | |____ ____) |
+ |______|_____/
+
+
+ Questa magia ti mostra i tuoi dintorni.
+
+
+Esempi
+
+ ls
+ Mostra cosa c'è intorno alla tua posizione corrente
+
+ ls cucina
+ Mostra cosa c'è in cucina, ammesso che sei in casa-mia
+
+ ls ../
+ Mostra cosa c'è nella cartella precedente
+
+ ls ~/casa-mia/cucina
+ Indipendentemente dalla tua posizione, mostra cosa c'è nella tua cucina
+
+
+Bandiere
+
+ -a
+Questo mostra tutti i file nella directory corrente, inclusi i file nascosti che iniziano con .
+Include la tua posizione corrente . e la cartella ..
+
+
+Esempio
+
+ls -a ../
+Mostrerà tutto della cartella precedente

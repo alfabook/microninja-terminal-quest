@@ -1,0 +1,12 @@
+table Icon
+  Caption:
+  AppID: terminal-[q]uest
+  Command: /usr/bin/microninja-launcher /usr/bin/linux-story-gui
+  Singleton: true
+  Icon: /usr/share/icons/microninja/88x88/apps/linux-story.png
+  IconHover: /usr/share/icons/microninja/88x88/apps/linux-story-hover.png
+  HoverXOffset: 0
+  Relative-To: grid
+  X: 2
+  Y: 1
+end

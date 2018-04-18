@@ -1,0 +1,27 @@
+   _____ _____
+  / ____|  __ \
+ | |    | |  | |
+ | |    | |  | |
+ | |____| |__| |
+  \_____|_____/
+
+
+Questa magia ti da il potere di muoverti.
+
+
+Esempi
+
+cd
+Questo ti porta alla tua cartella home
+
+cd ~
+Identica alla magia di sopra
+
+cd ../
+Ti sposta una cartella indietro
+
+cd buco-nascosto
+Questo ti sposta dentro buco-nascosto, se sei vicino
+
+cd ~/bosco/casa-su-albero
+Ti muoverà alla cartella ~/bosco/casa-su-albero indipendentemente dalla tua posizione attuale

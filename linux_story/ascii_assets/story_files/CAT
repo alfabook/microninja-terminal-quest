@@ -1,0 +1,18 @@
+   _____       _______
+  / ____|   /\|__   __|
+ | |       /  \  | |
+ | |      / /\ \ | |
+ | |____ / ____ \| |
+  \_____/_/    \_\_|
+
+
+Questa magia ti da il poter di leggere il contenuto dei file
+
+
+Esempi
+
+cat guardaroba/berretto
+Questo ti stamperà il contenuto di berretto se sei in ~/casa-mia/camera-mia
+
+cat ~/casa-mia/camera-mia/guardaroba/berretto
+Questo ti stamperà il contenuto di berretto ovunque tu sia

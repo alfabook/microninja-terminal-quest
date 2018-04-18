@@ -1,0 +1,470 @@
+# Assume items are files unless otherwsie directed
+
+# Non movable items in camera-mia
+# group them by directory (if possible?)
+
+# We have a choice, we can either have the array of item initialised,
+# or do them all separately.
+# Or, PYTHON
+sveglia, sedia, computer, scrivania:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/camera-mia"
+
+letto_camera-mia:
+    name: "letto"
+
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/camera-mia"
+
+# shelves
+redwall, la-collina-dei-conigli, alice-nel-paese-delle-meraviglie, fumetti:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/camera-mia/scaffali"
+
+nota_camera-mia:
+    name: "nota"
+
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/camera-mia/scaffali"
+
+# wardrobe
+berretto, abito, maglione, gonna, camicia, maglietta, pantaloni:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/camera-mia/guardaroba"
+
+# Parents-room
+quadro, tv, finestra:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/camera-genitori"
+
+letto_camera-genitori:
+    name: "letto"
+
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/camera-genitori"
+
+# Garden
+panchina, fiori, recinto:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/giardino"
+
+# Dad is there for consistancy, (as he should disappear when the bell goes)
+# However, he should be deleted before the bell goes
+carote, zucca, papà, pomodoro, cipolla:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/giardino/serra"
+
+papà:
+    challenges:
+        - challenge: 4
+          step: 3
+          exists: False
+
+# The nota should appear once the bell has gone
+nota_serra:
+    name: "nota"
+
+    challenges:
+        - challenge: 4
+          step: 3
+          path: "~/casa-mia/giardino/serra"
+
+# This is the contents of the cesto. Moves around a lot in challenges 13-14
+# We could also specify the cesto directory, but then we would have to specify the contents separately
+bottiglia-vuota:
+    challenges:
+        - challenge: 10
+          step: 1
+          path: "~/città/.rifugio-nascosto/cesto"
+
+        - challenge: 13
+          step: 2
+          path: "~/cesto"
+
+        - challenge: 13
+          step: 5
+          path: "~/casa-mia/cucina/cesto"
+
+        - challenge: 14
+          step: 4
+          path: "~/cesto"
+
+        - challenge: 14
+          step: 6
+          path: "~/città/.rifugio-nascosto/cesto"
+
+# cucina
+# Any of the food could go on a journey, but these items
+# we select by default
+banana, torta, croissant:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/cucina"
+
+        # Here it might be moved to the cesto
+        - challenge: 14
+          step: 3
+          path: "~/casa-mia/cucina/cesto"
+
+        - challenge: 14
+          step: 4
+          path: "~/cesto"
+
+        - challenge: 14
+          step: 6
+          path: "~/città/.rifugio-nascosto/cesto"
+
+# These could be selected but are not by default
+acini, latte, crostata, sandwich:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/cucina"
+
+
+# Mum disappears after bell
+mamma:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/cucina"
+
+        - challenge: 8
+          step: 1
+          exists: False
+
+# Appears after Mum disappears
+nota_cucina:
+    name: "nota"
+
+    challenges:
+        - challenge: 8
+          step: 1
+          path: "~/casa-mia/cucina"
+
+        - challenge: 10
+          step: 1
+          exists: False
+
+# All other items in the cucina
+giornale, forno, tavolo:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/casa-mia/cucina"
+
+# città folk
+Sindaco, uomo-scontroso, giovane-ragazza, bambino:
+    challenges:
+        - challenge: 1
+          step: 1
+          path: "~/città"
+
+uomo-scontroso:
+    challenges:
+        - challenge: 8
+          step: 1
+          exists: False
+
+giovane-ragazza:
+    challenges:
+        - challenge: 8
+          step: 2
+          exists: False
+
+bambino:
+    challenges:
+        - challenge: 8
+          step: 3
+          exists: False
+
+Sindaco:
+    challenges:
+        - challenge: 8
+          step: 6
+          exists: False
+
+nota_città:
+    name: "nota"
+
+    challenges:
+        - challenge: 8
+          step: 6
+          path: "~/città"
+
+        - challenge: 10
+          step: 1
+          exists: False
+
+# .rifugio-nascosto folk
+# start off all in the same place
+Edith, Edoardo, mela:
+    challenges:
+        - challenge: 10
+          step: 1
+          path: "~/città/.rifugio-nascosto"
+
+mela:
+    challenges:
+        - challenge: 11
+          step: 5
+          path: "~/città/.rifugio-nascosto/cesto"
+
+        - challenge: 11
+          step: 6
+          path: "~/città/.rifugio-nascosto"
+
+# Eleonora and the cane run outside
+Eleonora, cane:
+    challenges:
+        - challenge: 10
+          step: 1
+          path: "~/città/.rifugio-nascosto"
+        - challenge: 11
+          step: 6
+          path: "~/città"
+
+# Then Eleonora is saved
+Eleonora:
+    challenges:
+        - challenge: 12
+          step: 1
+          path: "~/città/.rifugio-nascosto"
+
+          # Chapter 4
+        - challenge: 23
+          step: 4
+          path: "~/città"
+
+        - challenge: 24
+          step: 1
+          path: "~/città/est"
+
+        - challenge: 24
+          step: 3
+          path: "~/città/est/negozio-capanni"
+
+        - challenge: 26
+          step: 1
+          path: "~/città"
+
+        - challenge: 26
+          step: 3
+          path: "~/città/est/biblioteca"
+
+        - challenge: 27
+          step: 1
+          path: "~/città/est/negozio-capanni"
+
+        - challenge: 28
+          step: 1
+          path: "~/città/est"
+
+        - challenge: 28
+          step: 3
+          path: "~/città/est/ristorante"
+
+        - challenge: 28
+          step: 5
+          path: "~/città/est/ristorante/.cantina"
+
+# Finally the cane is saved
+cane:
+    challenges:
+        - challenge: 12
+          step: 2
+          path: "~/città/.rifugio-nascosto"
+
+        - challenge: 22
+          step: 2
+          exists: False
+
+# Find the .minuscolo-scrigno in the .rifugio-nascosto
+MV:
+    challenges:
+        - challenge: 10
+          step: 1
+          path: "~/città/.rifugio-nascosto/.minuscolo-scrigno"
+
+        # Move the MV command into .scrigno
+        #- challenge: 16
+        #  step: 6
+        #  path: "~/casa-mia/camera-mia/.scrigno"
+
+# Find the .scrigno in your room
+CAT, CD, LS, .nota:
+    challenges:
+        - challenge: 15
+          step: 1
+          path: "~/casa-mia/camera-mia/.scrigno"
+
+# Mum's diary
+diario-mamma, ECHO, mappa:
+    challenges:
+        - challenge: 17
+          step: 1
+          path: "~/casa-mia/camera-genitori/.sicuro"
+
+# Generate fattoria
+# Horse, pig, cow
+Cobweb, Trotter, Margherita, Ruth:
+    challenges:
+        - challenge: 17
+          step: 1
+          path: "~/fattoria/fienile"
+        - challenge: 21
+          step: 10
+          path: "~/fattoria/fienile/.rifugio"
+
+# fattoriaer's wife
+letto_casa-fattoria:
+    name: "letto"
+
+    challenges:
+        - challenge: 17
+          step: 1
+          path: "~/fattoria/casa-fattoria"
+
+# capanno-attrezzi
+MKDIR, chiave-inglese, martello, sega, metro:
+    challenges:
+        - challenge: 17
+          step: 1
+          path: "~/fattoria/capanno-attrezzi"
+
+igloo:
+    challenges:
+        - challenge: 20
+          step: 5
+          path: "~/fattoria/capanno-attrezzi"
+          directory: True
+
+".rifugio":
+    directory: True
+    challenges:
+        - challenge: 21
+          step: 7
+          path: "~/fattoria/fienile"
+
+Edoardo:
+    challenges:
+        - challenge: 22
+          step: 3
+          path: "~/città/.rifugio-nascosto"
+          exists: False
+
+Edith:
+    challenges:
+        - challenge: 22
+          step: 4
+          path: "~/città/.rifugio-nascosto"
+          exists: False
+
+Bernardo:
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/negozio-capanni"
+        - challenge: 30
+          step: 1
+          exists: False
+
+migliore-costruttore-capanni-del-mondo.sh:
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/negozio-capanni"
+          permissions: 0755
+
+migliore-corno-del-mondo-sbagliato.sh:
+    name: "migliore-corno-del-mondo.sh"
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/negozio-capanni"
+          permissions: 0755
+        - challenge: 27
+          step: 3
+          path: "~/città/est/negozio-capanni"
+          exists: False
+
+migliore-corno-del-mondo-corretto.sh:
+    name: "migliore-corno-del-mondo.sh"
+    challenges:
+        - challenge: 27
+          step: 3
+          path: "~/città/est/negozio-capanni"
+          permissions: 0755
+
+scantinato:
+    directory: True
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/negozio-capanni"
+
+diario-bernardo-1, diario-bernardo-2:
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/negozio-capanni/scantinato"
+
+fotocopiatrice.sh:
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/negozio-capanni/scantinato"
+          permissions: 0755
+
+capanno:
+    directory: True
+    challenges:
+        - challenge: 25
+          step: 5
+          path: "~/città/est/negozio-capanni"
+
+NANO:
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/biblioteca/ala-pubblica"
+
+ala-privata:
+    directory: True
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/biblioteca"
+          permissions: 0000
+
+# Hidden librarian
+Clara:
+    challenges:
+        - challenge: 23
+          step: 4
+          path: "~/città/est/ristorante/.cantina"
+
+cappello-bernardo:
+    challenges:
+        - challenge: 30
+          step: 1
+          path: "~/città/est/negozio-capanni"

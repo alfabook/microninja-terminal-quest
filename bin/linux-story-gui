@@ -1,0 +1,92 @@
+#!/usr/bin/microninja-splash /usr/share/linux-story/media/images/splash.png /usr/bin/env python
+
+# linux-story-gui
+#
+# Copyright (C) 2014, 2015 Kano Computing Ltd
+# License: GNU General Public License v2 http://www.gnu.org/licenses/gpl-2.0.txt
+#
+# Launches linux tutorial in a Gtk application
+
+# Copyright (C) 2016 Alfabook srl
+# License: http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2
+# rebadged with microninja
+# removed tracker
+
+
+"""
+linux-story-gui launches the application Terminal Quest at different points in the story
+
+Usage:
+  linux-story-gui [-d | --debug]
+  linux-story-gui challenge <challenge> <step> [-d | --debug]
+
+Options:
+   -h, --help       Show this message.
+   -d, --debug      Debug mode, don't hide the terminal and spellbook by default at the start
+"""
+
+
+from gi.repository import Gtk
+import os
+import sys
+import docopt
+
+if __name__ == '__main__' and __package__ is None:
+    dir_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    if dir_path != '/usr':
+        sys.path.insert(1, dir_path)
+
+from linux_story.gtk3.MainWindow import MainWindow
+from microninja_profile.apps import load_app_state_variable
+
+# Track the user's progress
+#from kano_profile.tracker import Tracker
+#kanotracker = Tracker()
+
+
+def main(debug=False, challenge=None, step=None):
+    win = MainWindow(debug)
+
+    # If the application is launched with two arguments, then this is
+    # debugging and we want to launch the application directly from the level
+    # specified
+    if challenge and step:
+        win.setup_application_widgets()
+        win.start_script_in_terminal(challenge, step)
+
+    else:
+        # Show the selection menu for the unlocked challenges
+
+        # Get the last unlocked challenge.
+        last_unlocked_challenge = load_app_state_variable(
+            'linux-story', 'level'
+        )
+
+        if last_unlocked_challenge:
+            # With this data, we need to decide which chapters are locked.
+            win.show_menu()
+
+        else:
+            win.setup_application_widgets()
+            win.start_script_in_terminal("0", "1")
+
+    os.system("microninja-stop-splash")
+    Gtk.main()
+
+
+# close the server through here
+def handle_cleanup():
+    pass
+
+
+if __name__ == "__main__":
+    args = docopt.docopt(__doc__)
+
+    debug = args['--debug']
+    challenge = args['<challenge>']
+    step = args['<step>']
+
+    try:
+        main(debug, challenge, step)
+    finally:
+        handle_cleanup()

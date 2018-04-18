@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+#
+# Copyright (C) 2014, 2015 Kano Computing Ltd.
+# License: http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2
+#
+# A terminal for one of the challenges
+
+from linux_story.story.terminals.terminal_cd import TerminalCd
+from linux_story.commands_real import shell_command
+
+
+class TerminalMv(TerminalCd):
+    terminal_commands = ["ls", "cat", "cd", "mv"]
+
+    def do_mv(self, line):
+        shell_command(self.real_path, line, "mv")
+
+    def complete_mv(self, text, line, begidx, endidx):
+        completions = self.autocomplete_files(text, line, begidx, endidx)
+        return completions

@@ -1,0 +1,18 @@
+  __  ____      __
+ |  \/  \ \    / /
+ | \  / |\ \  / /
+ | |\/| | \ \/ /
+ | |  | |  \  /
+ |_|  |_|   \/
+
+
+Questa magia ti da il potere di movere oggetti e rinominarli
+
+
+Esempi
+
+mv oggetto cesto/
+Se cesto esiste ed è una directory, questo muoverà gli gli oggetto dentro il cesto
+
+mv oggetto oggetto-migliore
+Se oggetto-migliore non esiste, rinominerà l'oggetto in oggetto-migliore

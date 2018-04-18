@@ -1,0 +1,11 @@
+linux-story (1.2.1-0) unstable; urgency=low
+
+  * Pi 3 change linux_story/gtk3/Storybook.py.
+
+ -- Scuolabook srl <info@scuolabook.it>  Mon, 5 May 2016 12:58:00 +0000
+
+linux-story (1.2-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Team Kano <dev@kano.me>  Wed, 22 Oct 2014 09:57:49 +0001
